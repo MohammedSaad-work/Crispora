@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crispora</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    /* smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    .scroll-offset {
+      scroll-margin-top: 70px;
+    }
+
+
+    body {
+      background-color: #000000;
+      overflow-x: hidden;
+    }
+    /* make the navbar sticky */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0px 10px;
+    }
+    .logo-img {
+  height: 60px;        /* fits nicely inside navbar */
+  width: auto;
+  margin-right: 10px;
+  border-radius: 8px;  /* optional: makes edges smooth */
+  object-fit: cover;
+  
+}
+ @media (max-width: 550px) {
+      .logo-img {
+        display: none;
+      }
+}
+
+
+.navbar {
+  min-height: 60px;
+}
+
+    /* ===== Carousel ===== */
+    #carouselExampleIndicators {
+      width: 100vw;
+      height: 80vh;
+      margin-top: -20px;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 80vh;
+      object-fit: cover;
+    }
+
+    /* ===== Cards ===== */
+    .equal-card {
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px black;
+    }
+
+    .equal-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px black;
+    }
+
+    .equal-card img {
+      height: 25vh;
+      object-fit: cover;
+    }
+
+    .equal-card .card-body {
+      flex: 1;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      color: white;
+      
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      flex-grow: 1;
+    }
+
+    .card .btn {
+      margin-top: auto;
+      align-self: center;
+      color: #000;
+      background-color: #FFC107;
+      border: solid 1px #FFC107;
+    }
+
+    @media (max-width: 576px) {
+      .equal-card {
+        height: auto;
+      }
+
+      .equal-card img {
+        height: 200px;
+      }
+
+      #carouselExampleIndicators,
+      .carousel-item img {
+        height: 80vh;
+      }
+    }
+
+    /* ===== Footer ===== */
+    footer.site-footer {
+      background-color: #FFC107;
+      color: #111010;
+      padding: 40px 0 20px;
+    }
+
+    footer.site-footer a {
+      color: #090909;
+      text-decoration: none;
+    }
+
+    footer.site-footer a:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 15px;
+      
+      font-size: 0.9rem;
+      color: #0d0d0d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#home">
+        <img src="img/logo.png" alt="Logo" class="logo-img" />
+   
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Home Section ===== -->
+  <section id="home" class="pt-3">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/resized-1.webp" alt="Crispora" class="d-block w-100" />
+        </div>
+        <div class="carousel-item">
+          <img src="img/resized-2.webp" alt="Crispora" class="d-block w-100" />
+        </div>
+        <div class="carousel-item">
+          <img src="img/resized-3.webp" alt="Crispora" class="d-block w-100" />
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== Menu Section ===== -->
+  <section id="menu" class="py-5 scroll-offset">
+    <div class="container my-3">
+      <h2 class="text-center mb-4 text-white margin">OUR MENU</h2>
+      <div class="row justify-content-center g-4">
+
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/Classic-broast.webp" alt="Food 1" />
+            <div class="card-body">
+              <h5 class="card-title">Classic Broast</h5>
+              <p class="card-text">Signature crispy chicken with a golden, flavour-packed coating.</p>
+              <p class="price-tag">₹149</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/spicy-volcano-Broast.webp" alt="Food 2" />
+            <div class="card-body">
+              <h5 class="card-title">Spicy Volcano Broast</h5>
+              <p class="card-text">Extra-hot seasoning for those who love a fiery kick.</p>
+              <p class="price-tag">₹169</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/malabar-broast.webp" alt="Food 3" />
+            <div class="card-body">
+              <h5 class="card-title">Malabar Broast</h5>
+              <p class="card-text">Kozhikode-inspired spices blended for a rich, authentic taste.</p>
+              <p class="price-tag">₹179</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/Boneless-crunch-broast.webp" alt="Food 4" />
+            <div class="card-body">
+              <h5 class="card-title">Boneless Crunch Broast</h5>
+              <p class="card-text">Soft, juicy boneless pieces coated for maximum crispiness.</p>
+              <p class="price-tag">₹199</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/classic-french-fries.webp" alt="Food 5" />
+            <div class="card-body">
+              <h5 class="card-title">Classic French Fries</h5>
+              <p class="card-text">Crispy golden fries, perfectly salted for a classic taste.</p>
+              <p class="price-tag">₹79</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/cheese-loaded-fries.webp" alt="Food 6" />
+            <div class="card-body">
+              <h5 class="card-title">Cheese Loaded Fries</h5>
+              <p class="card-text">Juicy paneer, crisp capsicum & spicy red paprika blend perfectly.</p>
+              <p class="price-tag">₹119</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/Garlic-Mayo-Dip.webp" alt="Food 7" />
+            <div class="card-body">
+              <h5 class="card-title">Garlic Mayo Dip</h5>
+              <p class="card-text">Creamy garlic mayo dip, perfect for enhancing any meal.</p>
+              <p class="price-tag">₹25</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/Broast-Shawarma-roll.webp" alt="Food 8" />
+            <div class="card-body">
+              <h5 class="card-title">Broast Shawarma Roll</h5>
+              <p class="card-text">Delicious shawarma roll filled with flavorful broast chicken and fresh veggies.</p>
+              <p class="price-tag">₹129</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/fresh-lime.webp" alt="Food 9" />
+            <div class="card-body">
+              <h5 class="card-title">Fresh Lime Cooler</h5>
+              <p class="card-text">Refreshing lime drink to cool you down and quench your thirst.</p>
+              <p class="price-tag">₹49</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/sparkling-berry-cooler.webp" alt="Food 10" />
+            <div class="card-body">
+              <h5 class="card-title">Sparkling Berry Cooler</h5>
+              <p class="card-text">A refreshing blend of sparkling water and mixed berries.</p>
+              <p class="price-tag">₹69</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/choco-shake.webp" alt="Food 11" />
+            <div class="card-body">
+              <h5 class="card-title">Choco Shake</h5>
+              <p class="card-text">Rich and creamy chocolate shake, a perfect treat for chocolate lovers.</p>
+              <p class="price-tag">₹99</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card equal-card">
+            <img src="img/tropical-mango-cooler.webp" alt="Food 12" />
+            <div class="card-body">
+              <h5 class="card-title">Tropical Mango Cooler</h5>
+              <p class="card-text">A sweet and tangy mango drink with tropical fruit flavors.</p>
+              <p class="price-tag">₹79</p>
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Offers Section ===== -->
+  <section id="offers" class="py-5 text-center bg-black text-white">
+    <div class="container">
+      <h2>Special Offers 🎉</h2>
+      <p class="lead mt-3">
+        Get 20% off on your first online order and exclusive weekend combos!
+      </p>
+      <a href="#contact" class="btn btn-success mt-3">Grab the Offer</a>
+    </div>
+  </section>
+
+  <!-- ===== Contact / Footer Section ===== -->
+  <section id="contact" class="pt-4">
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <div class="col-md-4 mb-3">
+            <h5>Crispora</h5>
+            <p>Delicious Broast and more, crafted with love and fresh ingredients every day!</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#offers">Offers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Contact Us</h5>
+            <p>Email: crispora@foodie.com</p>
+            <p>Phone: +91 8848681024</p>
+            <p>Location: Calicut, Kerala, India</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Crispora. All rights reserved. | Designed with  by Crispora Team
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
